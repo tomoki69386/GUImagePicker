@@ -11,20 +11,13 @@ import Photos
 
 class GUImagePickerCell: UICollectionViewCell {
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.borderColor = UIColor.white.cgColor
-        imageView.layer.borderWidth = 1
-        return imageView
-    }()
+    private let button = GUImageButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        imageView.frame = self.bounds
-        self.addSubview(imageView)
+        button.frame = self.bounds
+        self.addSubview(button)
     }
     
     func setUp(asset: PHAsset) {
@@ -33,7 +26,7 @@ class GUImagePickerCell: UICollectionViewCell {
                              targetSize: CGSize(width: 9000, height: 9000),
                              contentMode: .aspectFill,
                              options: nil) { (image, info) in
-                                self.imageView.image = image
+                                self.button.setImage(image, for: .normal)
         }
     }
     
