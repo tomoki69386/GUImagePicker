@@ -11,7 +11,6 @@ import Photos
 
 open class GUImagePickerController: UIViewController {
     
-    private var photoAssets = [PHAsset]()
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
@@ -22,6 +21,8 @@ open class GUImagePickerController: UIViewController {
         collectionView.register(GUImagePickerCell.self, forCellWithReuseIdentifier: "GUImagePickerCell")
         return collectionView
     }()
+    
+    private var photoAssets = [PHAsset]()
 
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,7 @@ open class GUImagePickerController: UIViewController {
     }
     
     @objc func cancel() {
-        print("cancel")
+        self.dismiss(animated: true)
     }
     
     @objc func done() {
@@ -74,7 +75,7 @@ extension GUImagePickerController: UICollectionViewDataSource {
 
 extension GUImagePickerController: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+
     }
 }
 
