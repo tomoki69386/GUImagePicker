@@ -38,17 +38,7 @@ open class GUImagePickerController: UIViewController {
     private func getALlPhotos() {
         let assets = PHAsset.fetchAssets(with: .image, options: nil)
         assets.enumerateObjects { (asset, index, stop) in
-            self.photoAssets.append(asset)
-            self.reload(asset: asset)
-        }
-    }
-    
-    private func reload(asset: PHAsset) {
-        let manager = PHImageManager()
-        manager.requestImage(for: asset,
-                             targetSize: CGSize(width: 9000, height: 9000),
-                             contentMode: .aspectFill,
-                             options: nil) { (image, info) in
+            self.photoAssets.insert(asset, at: 0)
         }
     }
 }

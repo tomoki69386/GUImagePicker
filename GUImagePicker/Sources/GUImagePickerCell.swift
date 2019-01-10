@@ -11,11 +11,19 @@ import Photos
 
 class GUImagePickerCell: UICollectionViewCell {
     
-    let imageView = UIImageView()
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderWidth = 1
+        return imageView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        imageView.frame = self.bounds
         self.addSubview(imageView)
     }
     
@@ -27,12 +35,6 @@ class GUImagePickerCell: UICollectionViewCell {
                              options: nil) { (image, info) in
                                 self.imageView.image = image
         }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        imageView.frame = self.bounds
     }
     
     required init?(coder aDecoder: NSCoder) {
