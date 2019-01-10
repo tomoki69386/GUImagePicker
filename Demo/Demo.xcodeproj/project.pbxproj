@@ -13,7 +13,8 @@
 		B751890E21E7710300919E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B751890D21E7710300919E65 /* Assets.xcassets */; };
 		B751891121E7710300919E65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B751890F21E7710300919E65 /* LaunchScreen.storyboard */; };
 		B751892021E7730300919E65 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B751891E21E7730300919E65 /* Info.plist */; };
-		B751892221E777B600919E65 /* GUImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751892121E777B600919E65 /* GUImagePickerController.swift */; };
+		B751892C21E78EC800919E65 /* GUImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751892B21E78EC800919E65 /* GUImagePickerController.swift */; };
+		B751892E21E78F8600919E65 /* GUImagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751892D21E78F8600919E65 /* GUImagePickerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,8 @@
 		B751891221E7710300919E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B751891E21E7730300919E65 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B751891F21E7730300919E65 /* GUImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUImagePicker.h; sourceTree = "<group>"; };
-		B751892121E777B600919E65 /* GUImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUImagePickerController.swift; sourceTree = "<group>"; };
+		B751892B21E78EC800919E65 /* GUImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUImagePickerController.swift; sourceTree = "<group>"; };
+		B751892D21E78F8600919E65 /* GUImagePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUImagePickerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,8 @@
 			children = (
 				B751891E21E7730300919E65 /* Info.plist */,
 				B751891F21E7730300919E65 /* GUImagePicker.h */,
-				B751892121E777B600919E65 /* GUImagePickerController.swift */,
+				B751892B21E78EC800919E65 /* GUImagePickerController.swift */,
+				B751892D21E78F8600919E65 /* GUImagePickerCell.swift */,
 			);
 			name = Sources;
 			path = ../GUImagePicker/Sources;
@@ -154,8 +157,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B751890921E7710200919E65 /* ViewController.swift in Sources */,
-				B751892221E777B600919E65 /* GUImagePickerController.swift in Sources */,
 				B751890721E7710200919E65 /* AppDelegate.swift in Sources */,
+				B751892C21E78EC800919E65 /* GUImagePickerController.swift in Sources */,
+				B751892E21E78F8600919E65 /* GUImagePickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
