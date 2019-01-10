@@ -16,6 +16,7 @@
 		B751892C21E78EC800919E65 /* GUImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751892B21E78EC800919E65 /* GUImagePickerController.swift */; };
 		B751892E21E78F8600919E65 /* GUImagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751892D21E78F8600919E65 /* GUImagePickerCell.swift */; };
 		B751893221E801DA00919E65 /* GUImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751893121E801DA00919E65 /* GUImageButton.swift */; };
+		B751893421E810D900919E65 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751893321E810D900919E65 /* CheckBoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		B751892B21E78EC800919E65 /* GUImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUImagePickerController.swift; sourceTree = "<group>"; };
 		B751892D21E78F8600919E65 /* GUImagePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUImagePickerCell.swift; sourceTree = "<group>"; };
 		B751893121E801DA00919E65 /* GUImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUImageButton.swift; sourceTree = "<group>"; };
+		B751893321E810D900919E65 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				B751892B21E78EC800919E65 /* GUImagePickerController.swift */,
 				B751892D21E78F8600919E65 /* GUImagePickerCell.swift */,
 				B751893121E801DA00919E65 /* GUImageButton.swift */,
+				B751893321E810D900919E65 /* CheckBoxView.swift */,
 			);
 			name = Sources;
 			path = ../GUImagePicker/Sources;
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B751890921E7710200919E65 /* ViewController.swift in Sources */,
+				B751893421E810D900919E65 /* CheckBoxView.swift in Sources */,
 				B751893221E801DA00919E65 /* GUImageButton.swift in Sources */,
 				B751890721E7710200919E65 /* AppDelegate.swift in Sources */,
 				B751892C21E78EC800919E65 /* GUImagePickerController.swift in Sources */,
