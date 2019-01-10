@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let hoge = GUImagePickerController()
-        self.present(hoge, animated: true)
+        let fuga = UINavigationController(rootViewController: GUImagePickerController())
+        self.present(fuga, animated: true)
     }
 }
