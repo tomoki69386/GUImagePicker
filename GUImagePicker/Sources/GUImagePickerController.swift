@@ -14,7 +14,6 @@ open class GUImagePickerController: UIViewController {
     private var photoAssets = [PHAsset]()
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         
@@ -32,6 +31,7 @@ open class GUImagePickerController: UIViewController {
         collectionView.dataSource = self
         view.addSubview(collectionView)
 
+        setBar()
         getALlPhotos()
     }
     
@@ -40,6 +40,23 @@ open class GUImagePickerController: UIViewController {
         assets.enumerateObjects { (asset, index, stop) in
             self.photoAssets.insert(asset, at: 0)
         }
+    }
+    
+    private func setBar() {
+        navigationItem.title = "select images"
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancel))
+        self.navigationItem.leftBarButtonItem = cancelButton
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done))
+        doneButton.isEnabled = false
+        self.navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    @objc func cancel() {
+        print("cancel")
+    }
+    
+    @objc func done() {
+        print("done")
     }
 }
 
