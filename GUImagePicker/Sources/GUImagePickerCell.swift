@@ -36,7 +36,7 @@ class GUImagePickerCell: UICollectionViewCell {
     
     private func checkBoxLayout() {
         let bgView = UIView()
-        bgView.backgroundColor = .brown
+        bgView.backgroundColor = .green
         self.backgroundView = bgView
         
         imageView.frame = self.bounds

@@ -19,6 +19,7 @@ open class GUImagePickerController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
         collectionView.register(GUImagePickerCell.self, forCellWithReuseIdentifier: "GUImagePickerCell")
+        collectionView.allowsMultipleSelection = true
         return collectionView
     }()
     
