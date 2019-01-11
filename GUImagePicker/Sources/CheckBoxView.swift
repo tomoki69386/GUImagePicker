@@ -10,8 +10,9 @@ import UIKit
 
 class CheckBoxView: UIView {
     var selected = false
-    init(frame: CGRect,selected: Bool) {
-        super.init(frame:frame)
+    init(size: CGFloat, selected: Bool) {
+        let frame = CGRect(x: 0, y: 0, width: size, height: size)
+        super.init(frame: frame)
         self.selected = selected
         self.backgroundColor = .clear
     }
@@ -20,16 +21,16 @@ class CheckBoxView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        let ovalColor:UIColor
-        let ovalFrameColor:UIColor
-        let checkColor:UIColor
+        let ovalColor: UIColor
+        let ovalFrameColor: UIColor
+        let checkColor: UIColor
         
         let RectCheck = CGRect(x: 5, y: 5, width: rect.width - 10, height: rect.height - 10)
         
         if self.selected {
             ovalColor = UIColor(red: 85/255, green: 185/255, blue: 1/255, alpha: 1)
-            ovalFrameColor = UIColor.black
-            checkColor = UIColor.white
+            ovalFrameColor = .black
+            checkColor = .white
         }else{
             ovalColor = UIColor(red: 150/255, green: 150/255, blue: 150/255, alpha: 0.2)
             ovalFrameColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 0.3)
@@ -68,6 +69,5 @@ class CheckBoxView: UIView {
         checkmark.lineWidth = 6
         // 描画
         checkmark.stroke()
-        
     }
 }

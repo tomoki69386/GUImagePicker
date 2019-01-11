@@ -11,13 +11,17 @@ import Photos
 
 class GUImagePickerCell: UICollectionViewCell {
     
-    private let button = GUImageButton()
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        button.frame = self.bounds
-        self.addSubview(button)
+        checkBoxLayout()
     }
     
     func setUp(asset: PHAsset) {
@@ -26,8 +30,28 @@ class GUImagePickerCell: UICollectionViewCell {
                              targetSize: CGSize(width: 9000, height: 9000),
                              contentMode: .aspectFill,
                              options: nil) { (image, info) in
-                                self.button.setImage(image, for: .normal)
+                                self.imageView.image = image
         }
+    }
+    
+    private func checkBoxLayout() {
+        let bgView = UIView()
+        bgView.backgroundColor = .brown
+        self.backgroundView = bgView
+        
+        imageView.frame = self.bounds
+        bgView.addSubview(imageView)
+        
+        let boxSize = frame.width * 0.3
+        
+        let falseBox = CheckBoxView(size: boxSize, selected: false)
+        self.addSubview(falseBox)
+        
+        let trueBox = CheckBoxView(size: boxSize, selected: true)
+        let backView = UIView(frame: frame)
+        backView.backgroundColor = .clear
+        backView.addSubview(trueBox)
+        self.selectedBackgroundView = backView
     }
     
     required init?(coder aDecoder: NSCoder) {
