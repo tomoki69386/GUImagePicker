@@ -53,12 +53,6 @@ open class GUImagePickerController: UIViewController {
         }
     }
     
-//    static func fetchSlackMessage(parameter: [String: String], completion: @escaping (APIResult) -> Void) {
-//        let request = StackMessageRequest(parameter: parameter)
-//        APIClient.send(request, completion: completion)
-//    }
-    
-    
     private func setBar() {
         navigationItem.title = "select images"
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancel))
