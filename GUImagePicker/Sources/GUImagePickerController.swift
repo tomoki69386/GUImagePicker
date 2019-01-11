@@ -23,8 +23,17 @@ open class GUImagePickerController: UIViewController {
         return collectionView
     }()
     
+    public var maxSelectableCount: Int = Int.max
+    public var minSelectableCount: Int = 1
+    
     private var photoAssets = [PHAsset]()
-
+    var isSelected: Bool = false {
+        didSet {
+            self.doneButton.isEnabled = self.isSelected
+        }
+    }
+    var doneButton: UIBarButtonItem!
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +41,7 @@ open class GUImagePickerController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
-
+        
         setBar()
         getALlPhotos()
     }
@@ -44,11 +53,17 @@ open class GUImagePickerController: UIViewController {
         }
     }
     
+//    static func fetchSlackMessage(parameter: [String: String], completion: @escaping (APIResult) -> Void) {
+//        let request = StackMessageRequest(parameter: parameter)
+//        APIClient.send(request, completion: completion)
+//    }
+    
+    
     private func setBar() {
         navigationItem.title = "select images"
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancel))
         self.navigationItem.leftBarButtonItem = cancelButton
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done))
+        doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done))
         doneButton.isEnabled = false
         self.navigationItem.rightBarButtonItem = doneButton
     }
@@ -58,7 +73,15 @@ open class GUImagePickerController: UIViewController {
     }
     
     @objc func done() {
-        print("done")
+        self.dismiss(animated: true)
+    }
+    
+    private func cellEvent(items: Array<IndexPath>) {
+        if minSelectableCount...maxSelectableCount ~= items.count && items.count != 0 {
+            self.isSelected = true
+        } else {
+            self.isSelected = false
+        }
     }
 }
 
@@ -76,7 +99,12 @@ extension GUImagePickerController: UICollectionViewDataSource {
 
 extension GUImagePickerController: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        guard let selectedItems = collectionView.indexPathsForSelectedItems else { return }
+        cellEvent(items: selectedItems)
+    }
+    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let selectedItems = collectionView.indexPathsForSelectedItems else { return }
+        cellEvent(items: selectedItems)
     }
 }
 

@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        let hoge = GUImagePickerController()
+        hoge.maxSelectableCount = 3
+        hoge.minSelectableCount = 1
+        
         let fuga = UINavigationController(rootViewController: GUImagePickerController())
         self.present(fuga, animated: true)
     }
